@@ -1,3 +1,5 @@
+import 'package:ecommerce/presentation/account/account_page.dart';
+import 'package:ecommerce/presentation/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/constants/colors.dart';
@@ -14,15 +16,13 @@ class _DashboardPageState extends State<DashboardPage> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    const Center(child: Text('Home Page')),
+    const HomePage(),
     const Center(
       child: Text('Explore Page'),
     ),
     const Center(child: Text('Cart Page')),
-    const Center(child: Text('Account Page')),
+    const AccountPage(),
   ];
-
-
 
   void _onItemTapped(int index) {
     setState(() {

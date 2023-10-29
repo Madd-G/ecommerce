@@ -15,9 +15,9 @@ class RegisterRequestModel {
 
   RegisterRequestModel(
       {required this.name,
-      required this.password,
-      required this.email,
-      required this.username});
+        required this.password,
+        required this.email,
+        required this.username});
 
   Map<String, dynamic> toMap() {
     return {

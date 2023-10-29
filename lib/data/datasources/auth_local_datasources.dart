@@ -1,10 +1,8 @@
-import 'dart:convert';
-
 import 'package:ecommerce/data/models/responses/auth_response_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthLocalDatasource {
-  // Save auth data
+  //save auth data
   Future<void> saveAuthData(AuthResponseModel model) async {
     final pref = await SharedPreferences.getInstance();
     await pref.setString('auth', model.toJson());

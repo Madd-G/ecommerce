@@ -8,7 +8,7 @@ import '../../common/components/custom_text_field.dart';
 import '../../common/constants/colors.dart';
 import '../../common/components/spaces.dart';
 import '../../common/constants/images.dart';
-import '../home/dashboard_page.dart';
+import '../dashboard/dashboard_page.dart';
 import 'bloc/login/login_bloc.dart';
 import 'register_page.dart';
 

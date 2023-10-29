@@ -1,11 +1,12 @@
-import 'package:ecommerce/data/datasources/auth_local_datasources.dart';
-import 'package:ecommerce/presentation/auth/bloc/login/login_bloc.dart';
-import 'package:ecommerce/presentation/auth/bloc/register/register_bloc.dart';
 import 'package:ecommerce/presentation/auth/login_page.dart';
-import 'package:ecommerce/presentation/auth/splash_page.dart';
-import 'package:ecommerce/presentation/home/dashboard_page.dart';
+import 'package:ecommerce/presentation/dashboard/dashboard_page.dart';
+import 'package:ecommerce/presentation/home/bloc/products/products_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'data/datasources/auth_local_datasources.dart';
+import 'presentation/auth/bloc/login/login_bloc.dart';
+import 'presentation/auth/bloc/register/register_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +25,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => LoginBloc(),
         ),
+        BlocProvider(
+          create: (context) => ProductsBloc()..add(const ProductsEvent.getAll()),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -32,14 +36,15 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         home: FutureBuilder<bool>(
-            future: AuthLocalDatasource().isLogin(),
-            builder: (context, snapshot) {
-              if (snapshot.data != null && snapshot.data!) {
-                return const DashboardPage();
-              } else {
-                return const LoginPage();
-              }
-            }),
+          future: AuthLocalDatasource().isLogin(),
+          builder: (context, snapshot) {
+            if (snapshot.data != null && snapshot.data!) {
+              return const DashboardPage();
+            } else {
+              return const LoginPage();
+            }
+          },
+        ),
       ),
     );
   }
