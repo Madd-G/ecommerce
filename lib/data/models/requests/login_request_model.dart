@@ -1,10 +1,5 @@
 import 'dart:convert';
 
-// {
-//     "identifier": "bahri2@gmail.com",
-//     "password": "12345678"
-// }
-
 class LoginRequestModel {
   final String identifier;
   final String password;

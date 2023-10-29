@@ -40,13 +40,13 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.symmetric(horizontal: 130.0),
               child: Image.asset(
                 Images.logo,
-                width: 100,
+                width: 200,
                 height: 100,
               )),
           const SpaceHeight(24.0),
           const Center(
             child: Text(
-              "E-Commerce Code with Alam",
+              "E-Commerce App",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
