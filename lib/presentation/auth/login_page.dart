@@ -1,3 +1,4 @@
+import 'package:ecommerce/data/datasources/auth_local_datasources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ecommerce/data/models/requests/login_request_model.dart';
@@ -82,6 +83,7 @@ class _LoginPageState extends State<LoginPage> {
               state.maybeWhen(
                   orElse: () {},
                   success: (data) {
+                    AuthLocalDatasource().saveAuthData(data);
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
