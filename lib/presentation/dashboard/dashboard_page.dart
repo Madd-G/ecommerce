@@ -1,9 +1,8 @@
+import 'package:ecommerce/common/constants/colors.dart';
+import 'package:ecommerce/common/constants/images.dart';
 import 'package:ecommerce/presentation/account/account_page.dart';
 import 'package:ecommerce/presentation/home/home_page.dart';
 import 'package:flutter/material.dart';
-
-import '../../common/constants/colors.dart';
-import '../../common/constants/images.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});

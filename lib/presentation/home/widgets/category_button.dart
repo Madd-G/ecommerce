@@ -1,7 +1,6 @@
+import 'package:ecommerce/common/components/spaces.dart';
+import 'package:ecommerce/common/constants/colors.dart';
 import 'package:flutter/material.dart';
-
-import '../../../common/components/spaces.dart';
-import '../../../common/constants/colors.dart';
 
 class CategoryButton extends StatelessWidget {
   final String imagePath;

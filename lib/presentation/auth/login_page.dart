@@ -1,14 +1,14 @@
+import 'package:ecommerce/common/components/button.dart';
+import 'package:ecommerce/common/components/custom_text_field.dart';
+import 'package:ecommerce/common/components/spaces.dart';
+import 'package:ecommerce/common/constants/colors.dart';
+import 'package:ecommerce/common/constants/images.dart';
 import 'package:ecommerce/data/datasources/auth_local_datasources.dart';
+import 'package:ecommerce/presentation/dashboard/dashboard_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ecommerce/data/models/requests/login_request_model.dart';
 
-import '../../common/components/button.dart';
-import '../../common/components/custom_text_field.dart';
-import '../../common/constants/colors.dart';
-import '../../common/components/spaces.dart';
-import '../../common/constants/images.dart';
-import '../dashboard/dashboard_page.dart';
 import 'bloc/login/login_bloc.dart';
 import 'register_page.dart';
 
@@ -109,12 +109,6 @@ class _LoginPageState extends State<LoginPage> {
             builder: (context, state) {
               return Button.filled(
                 onPressed: () {
-                  // Navigator.pushReplacement(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => const DashboardPage(),
-                  //   ),
-                  // );
                   final data = LoginRequestModel(
                       identifier: emailController.text,
                       password: passwordController.text);

@@ -1,14 +1,18 @@
+import 'package:ecommerce/common/components/search_input.dart';
+import 'package:ecommerce/common/components/spaces.dart';
+import 'package:ecommerce/common/constants/colors.dart';
+import 'package:ecommerce/common/constants/images.dart';
+import 'package:ecommerce/presentation/cart/bloc/cart/cart_bloc.dart';
+import 'package:ecommerce/presentation/cart/cart_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../common/components/search_input.dart';
-import '../../common/components/spaces.dart';
-import '../../common/constants/colors.dart';
-import '../../common/constants/images.dart';
+
 import 'bloc/products/products_bloc.dart';
 import 'widgets/category_button.dart';
 import 'widgets/image_slider.dart';
 import 'widgets/product_card.dart';
 import 'widgets/product_model.dart';
+import 'package:badges/badges.dart' as badges;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -103,18 +107,46 @@ class _HomePageState extends State<HomePage> {
               const Spacer(),
               Row(
                 children: [
-                  IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const SizedBox()),
+                  badges.Badge(
+                    badgeContent: BlocBuilder<CartBloc, CartState>(
+                      builder: (context, state) {
+                        return state.maybeWhen(
+                          orElse: () {
+                            return const Text(
+                              '0',
+                              style: TextStyle(color: Colors.white),
+                            );
+                          },
+                          loaded: (carts) {
+                            int totalQuantity = 0;
+                            for (var cart in carts) {
+                              totalQuantity += cart.quantity;
+                            }
+                            return Text(
+                              totalQuantity.toString(),
+                              style: const TextStyle(color: Colors.white),
+                            );
+                          },
                         );
+                        // return Text(
+                        //   '3',
+                        //   style: TextStyle(color: Colors.white),
+                        // );
                       },
-                      icon: Image.asset(
-                        Images.iconBuy,
-                        height: 24.0,
-                      )),
+                    ),
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const CartPage()),
+                          );
+                        },
+                        icon: Image.asset(
+                          Images.iconBuy,
+                          height: 24.0,
+                        )),
+                  ),
                   IconButton(
                       onPressed: () {
                         Navigator.push(

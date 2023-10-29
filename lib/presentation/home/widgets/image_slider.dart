@@ -1,11 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce/common/components/spaces.dart';
+import 'package:ecommerce/common/constants/colors.dart';
 import 'package:flutter/material.dart';
-import '../../../common/components/spaces.dart';
-import '../../../common/constants/colors.dart';
 
 class ImageSlider extends StatefulWidget {
   final List<String> items;
-  const ImageSlider({super.key, required this.items});
+  final bool isAsset;
+
+  const ImageSlider({super.key, required this.items, this.isAsset = true});
 
   @override
   State<ImageSlider> createState() => _ImageSliderState();
@@ -20,14 +22,23 @@ class _ImageSliderState extends State<ImageSlider> {
     return Column(
       children: [
         CarouselSlider(
-          items: widget.items
-              .map((e) => Image.asset(
-                    e,
-                    height: 206.0,
-                    width: MediaQuery.of(context).size.width,
-                    fit: BoxFit.cover,
-                  ))
-              .toList(),
+          items: widget.isAsset
+              ? widget.items
+                  .map((e) => Image.asset(
+                        e,
+                        height: 206.0,
+                        width: MediaQuery.of(context).size.width,
+                        fit: BoxFit.cover,
+                      ))
+                  .toList()
+              : widget.items
+                  .map((e) => Image.network(
+                        e,
+                        height: 206.0,
+                        width: MediaQuery.of(context).size.width,
+                        fit: BoxFit.cover,
+                      ))
+                  .toList(),
           carouselController: _controller,
           options: CarouselOptions(
             autoPlay: true,

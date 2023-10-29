@@ -1,6 +1,6 @@
+import 'package:ecommerce/common/constants/images.dart';
 import 'package:flutter/material.dart';
 
-import '../../common/constants/images.dart';
 import 'login_page.dart';
 
 class SplashPage extends StatefulWidget {

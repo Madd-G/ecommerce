@@ -18,10 +18,14 @@ class _AccountPageState extends State<AccountPage> {
           onPressed: () async {
             await AuthLocalDatasource().removeAuthData();
             if (mounted) {
-              Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) {
-              return const LoginPage();
-            }));
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const LoginPage();
+                  },
+                ),
+              );
             }
           },
           child: const Text('Logout'),

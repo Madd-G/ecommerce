@@ -21,9 +21,9 @@ class AuthResponseModel {
       );
 
   Map<String, dynamic> toMap() => {
-    "jwt": jwt,
-    "user": user?.toMap(),
-  };
+        "jwt": jwt,
+        "user": user?.toMap(),
+      };
 }
 
 class User {
@@ -52,28 +52,28 @@ class User {
   String toJson() => json.encode(toMap());
 
   factory User.fromMap(Map<String, dynamic> json) => User(
-    id: json["id"],
-    username: json["username"],
-    email: json["email"],
-    provider: json["provider"],
-    confirmed: json["confirmed"],
-    blocked: json["blocked"],
-    createdAt: json["createdAt"] == null
-        ? null
-        : DateTime.parse(json["createdAt"]),
-    updatedAt: json["updatedAt"] == null
-        ? null
-        : DateTime.parse(json["updatedAt"]),
-  );
+        id: json["id"],
+        username: json["username"],
+        email: json["email"],
+        provider: json["provider"],
+        confirmed: json["confirmed"],
+        blocked: json["blocked"],
+        createdAt: json["createdAt"] == null
+            ? null
+            : DateTime.parse(json["createdAt"]),
+        updatedAt: json["updatedAt"] == null
+            ? null
+            : DateTime.parse(json["updatedAt"]),
+      );
 
   Map<String, dynamic> toMap() => {
-    "id": id,
-    "username": username,
-    "email": email,
-    "provider": provider,
-    "confirmed": confirmed,
-    "blocked": blocked,
-    "createdAt": createdAt?.toIso8601String(),
-    "updatedAt": updatedAt?.toIso8601String(),
-  };
+        "id": id,
+        "username": username,
+        "email": email,
+        "provider": provider,
+        "confirmed": confirmed,
+        "blocked": blocked,
+        "createdAt": createdAt?.toIso8601String(),
+        "updatedAt": updatedAt?.toIso8601String(),
+      };
 }
