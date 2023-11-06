@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import '../constants/colors.dart';
+import 'package:ecommerce/core.dart';
 
 class RowText extends StatelessWidget {
   final String label;

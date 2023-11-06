@@ -1,4 +1,4 @@
-import 'dart:convert';
+import 'package:ecommerce/core.dart';
 
 class AuthResponseModel {
   final String? jwt;

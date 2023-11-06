@@ -1,4 +1,11 @@
-import 'dart:convert';
+import 'package:ecommerce/core.dart';
+
+// {
+//     "name": "alamsyah",
+//     "password": "12345678",
+//     "email": "alamsyah@gmail.com",
+//     "username": "alamsyah"
+// }
 
 class RegisterRequestModel {
   final String name;
@@ -8,9 +15,9 @@ class RegisterRequestModel {
 
   RegisterRequestModel(
       {required this.name,
-        required this.password,
-        required this.email,
-        required this.username});
+      required this.password,
+      required this.email,
+      required this.username});
 
   Map<String, dynamic> toMap() {
     return {

@@ -1,8 +1,5 @@
-import 'package:ecommerce/common/components/spaces.dart';
-import 'package:ecommerce/common/constants/colors.dart';
-import 'package:ecommerce/common/extensions/int_ext.dart';
+import 'package:ecommerce/core.dart';
 import 'package:ecommerce/data/models/responses/products_response_model.dart';
-import 'package:flutter/material.dart';
 
 class ProductInfoWidget extends StatelessWidget {
   const ProductInfoWidget({

@@ -23,7 +23,6 @@ mixin _$CartEvent {
     required TResult Function(CartModel cart) remove,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
@@ -39,7 +38,6 @@ mixin _$CartEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
@@ -47,7 +45,6 @@ mixin _$CartEvent {
     required TResult Function(_Remove value) remove,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
@@ -76,9 +73,9 @@ class _$CartEventCopyWithImpl<$Res, $Val extends CartEvent>
     implements $CartEventCopyWith<$Res> {
   _$CartEventCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
@@ -531,9 +528,9 @@ class _$CartStateCopyWithImpl<$Res, $Val extends CartState>
     implements $CartStateCopyWith<$Res> {
   _$CartStateCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
@@ -950,7 +947,7 @@ class _$LoadedImpl implements _Loaded {
   @override
   List<CartModel> get carts {
     if (_carts is EqualUnmodifiableListView) return _carts;
-// ignore: implicit_dynamic_type
+    // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_carts);
   }
 

@@ -1,6 +1,4 @@
-import 'package:ecommerce/presentation/cart/widgets/cart_model.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:ecommerce/core.dart';
 
 part 'cart_event.dart';
 
@@ -24,6 +22,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       }
     });
 
+    // TODO: fix remove bug
     on<_Remove>((event, emit) {
       final currentState = state as _Loaded;
       //bila product ada di cart, maka dikurangi quantity
@@ -31,13 +30,21 @@ class CartBloc extends Bloc<CartEvent, CartState> {
           .indexWhere((element) => element.product.id == event.cart.product.id);
       if (index >= 0) {
         currentState.carts[index].quantity -= 1;
-
-        if (currentState.carts[index].quantity < 0) {
+        List<CartModel> listCart = currentState.carts.toList();
+        listCart.remove(event.cart);
+        emit(_Loaded(listCart));
+        if (currentState.carts[index].quantity <= 0) {
           currentState.carts.removeAt(index);
         }
         emit(const _Loading());
-        emit(_Loaded(currentState.carts));
+        // emit(_Loaded(currentState.carts));
+        emit(_Loaded(listCart));
       }
+    });
+
+    on<_Started>((event, emit) {
+      emit(const _Loading());
+      emit(const _Loaded([]));
     });
   }
 }

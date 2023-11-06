@@ -1,7 +1,5 @@
-import 'package:ecommerce/data/datasources/product_remote_datasource.dart';
+import 'package:ecommerce/core.dart';
 import 'package:ecommerce/data/models/responses/products_response_model.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'products_event.dart';
 

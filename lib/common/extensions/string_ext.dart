@@ -1,4 +1,4 @@
-import 'package:intl/intl.dart';
+import 'package:ecommerce/core.dart';
 
 extension StringExt on String {
   String get currencyFormatRp => NumberFormat.currency(

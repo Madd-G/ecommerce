@@ -1,13 +1,5 @@
-import 'package:ecommerce/common/components/spaces.dart';
-import 'package:ecommerce/common/constants/colors.dart';
-import 'package:ecommerce/common/constants/variables.dart';
-import 'package:ecommerce/common/extensions/int_ext.dart';
-import 'package:ecommerce/presentation/cart/bloc/cart/cart_bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ecommerce/common/constants/images.dart' as local_images;
-
-import 'cart_model.dart';
+import 'package:ecommerce/core.dart';
+import '../../../common/constants/images.dart' as local_images;
 
 class CartItemWidget extends StatefulWidget {
   const CartItemWidget({

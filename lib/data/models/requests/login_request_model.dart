@@ -1,4 +1,9 @@
-import 'dart:convert';
+import 'package:ecommerce/core.dart';
+
+// {
+//     "identifier": "alamsyah@gmail.com",
+//     "password": "12345678"
+// }
 
 class LoginRequestModel {
   final String identifier;

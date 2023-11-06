@@ -1,12 +1,4 @@
-import 'package:ecommerce/data/datasources/auth_local_datasources.dart';
-import 'package:ecommerce/presentation/auth/bloc/login/login_bloc.dart';
-import 'package:ecommerce/presentation/auth/bloc/register/register_bloc.dart';
-import 'package:ecommerce/presentation/auth/login_page.dart';
-import 'package:ecommerce/presentation/cart/bloc/cart/cart_bloc.dart';
-import 'package:ecommerce/presentation/dashboard/dashboard_page.dart';
-import 'package:ecommerce/presentation/home/bloc/products/products_bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'core.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,8 +24,39 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => CartBloc(),
         ),
+        BlocProvider(
+          create: (context) => OrderBloc(),
+        ),
+        BlocProvider(
+          create: (context) => OrderDetailBloc(),
+        ),
+        BlocProvider(
+          create: (context) => ProvinceBloc(),
+        ),
+        BlocProvider(
+          create: (context) => CityBloc(),
+        ),
+        BlocProvider(
+          create: (context) => SubdistrictBloc(),
+        ),
+        BlocProvider(
+          create: (context) => AddAddressBloc(),
+        ),
+        BlocProvider(
+          create: (context) => GetAddressBloc(),
+        ),
+         BlocProvider(
+          create: (context) => GetCostBloc(),
+        ),
+        BlocProvider(
+          create: (context) => BuyerOrderBloc(),
+        ),
+         BlocProvider(
+          create: (context) => CekResiBloc(),
+        ),
       ],
       child: MaterialApp(
+        title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

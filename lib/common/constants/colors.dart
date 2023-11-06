@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:ecommerce/core.dart';
 
 class ColorName {
   static const Color white = Color(0xffFFFFFF);

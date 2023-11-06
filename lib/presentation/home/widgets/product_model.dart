@@ -1,4 +1,4 @@
-import 'package:ecommerce/common/extensions/int_ext.dart';
+import 'package:ecommerce/core.dart';
 
 class ProductModel {
   final List<String> images;

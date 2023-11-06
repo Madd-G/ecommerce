@@ -1,5 +1,4 @@
-import 'package:ecommerce/common/components/spaces.dart';
-import 'package:flutter/material.dart';
+import 'package:ecommerce/core.dart';
 
 class ProductDescriptionWidget extends StatelessWidget {
   const ProductDescriptionWidget({

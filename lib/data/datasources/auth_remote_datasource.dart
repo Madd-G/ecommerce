@@ -1,7 +1,4 @@
-import 'package:dartz/dartz.dart';
-import 'package:ecommerce/common/constants/variables.dart';
-import 'package:ecommerce/data/models/requests/login_request_model.dart';
-import 'package:ecommerce/data/models/requests/register_request_model.dart';
+import 'package:ecommerce/core.dart';
 import 'package:ecommerce/data/models/responses/auth_response_model.dart';
 import 'package:http/http.dart' as http;
 

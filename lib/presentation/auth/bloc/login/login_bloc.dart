@@ -1,13 +1,8 @@
-import 'package:ecommerce/data/datasources/auth_remote_datasource.dart';
-import 'package:ecommerce/data/models/requests/login_request_model.dart';
+import 'package:ecommerce/core.dart';
 import 'package:ecommerce/data/models/responses/auth_response_model.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'login_event.dart';
-
 part 'login_state.dart';
-
 part 'login_bloc.freezed.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
