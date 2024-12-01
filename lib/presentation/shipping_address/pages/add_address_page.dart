@@ -253,7 +253,6 @@ class _AddAddressPageState extends State<AddAddressPage> {
                 );
               },
               error: (message) {
-                print('error: $message');
                 return Button.filled(
                   onPressed: () {},
                   label: 'Error $message',

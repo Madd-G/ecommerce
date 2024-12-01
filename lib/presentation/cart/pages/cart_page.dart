@@ -22,7 +22,7 @@ class _CartPageState extends State<CartPage> {
 
   int idAddress = 0;
 
-  String courierName = 'jne';
+  String courierName = 'ide';
   int courierPrice = 0;
 
   @override
@@ -122,7 +122,7 @@ class _CartPageState extends State<CartPage> {
                                 origin: subdistrictOrigin,
                                 destination:
                                     address.attributes.subdistrictId.toString(),
-                                courier: 'jne',
+                                courier: 'ide',
                               ));
                           idAddress = address.id;
                           return Container(
@@ -344,8 +344,10 @@ class _CartPageState extends State<CartPage> {
                                               data: Data(
                                                 items: items,
                                                 totalPrice: localTotalPrice,
+                                                // TODO: Fix this
                                                 deliveryAddress:
-                                                    'Jeparaloka, Jepara',
+                                                    // 'Jeparaloka, Jepara',
+                                                    'address',
                                                 courierName: courierName,
                                                 courierPrice: courierPrice,
                                                 status: 'waiting-payment',

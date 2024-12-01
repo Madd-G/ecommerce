@@ -33,13 +33,11 @@ class ProductCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: Image.network(
-                '${Variables.baseUrl}${data.attributes.images.data.first.attributes.url}',
-                width: 170.0,
-                height: 112.0,
-                fit: BoxFit.cover,
-              ),
+            Image.network(
+              '${Variables.baseUrl}${data.attributes.images.data.first.attributes.url}',
+              width: 170.0,
+              height: 120.0,
+              fit: BoxFit.cover,
             ),
             const SpaceHeight(14.0),
             Expanded(

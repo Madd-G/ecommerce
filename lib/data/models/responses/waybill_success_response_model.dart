@@ -133,7 +133,8 @@ class DeliveryStatus {
   factory DeliveryStatus.fromMap(Map<String, dynamic> json) => DeliveryStatus(
         status: json["status"],
         podReceiver: json["pod_receiver"],
-        podDate: DateTime.parse(json["pod_date"]),
+        // podDate: DateTime.parse(json["pod_date"]),
+        podDate: DateTime.now(),
         podTime: json["pod_time"],
       );
 
@@ -191,7 +192,8 @@ class Details {
         waybillNumber: json["waybill_number"],
         waybillDate: DateTime.parse(json["waybill_date"]),
         waybillTime: json["waybill_time"],
-        weight: json["weight"]?.toDouble(),
+        // weight: json["weight"]?.toDouble(),
+        weight: 2.0,
         origin: json["origin"],
         destination: json["destination"],
         shippperName: json["shippper_name"],
